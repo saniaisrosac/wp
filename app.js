@@ -69,9 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     countdownElement.textContent = `${currentDay}/${totalDays}`;
 
     // Dynamic Progress Bar calculation based on completed preparation days
-    // Starts at exactly 27% visual baseline on Day 1 (matching Canva reference composition)
-    // and upscales linearly to 100% on Day 45
-    const progressPercent = 27 + ((currentDay - 1) / (totalDays - 1)) * 73;
+    const progressPercent = (currentDay / totalDays) * 100;
     progressBar.style.width = `${progressPercent.toFixed(1)}%`;
   }
 
