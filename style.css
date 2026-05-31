@@ -83,10 +83,10 @@ body {
   align-items: center;
   gap: 8px; /* Delicate gap matching the visual canvas reference */
   font-family: var(--font-montserrat);
-  font-size: 15.4px;
+  font-size: 18px;
   letter-spacing: 0.08em;
-  color: var(--pastel-pink); /* Soft blush pink */
-  opacity: 0.9;
+  color: #f44c7a; /* Soft blush pink */
+  opacity: 1;
   margin-bottom: 40px; /* 40px above countdown score as specified in visual guidelines */
 }
 
