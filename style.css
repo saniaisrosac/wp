@@ -1,0 +1,131 @@
+/* ROOT VARIABLES & THEME TOKENS */
+:root {
+  --bg-color: #000000;
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+  --pastel-pink: #fbc6c6;      /* Soft blush pink / rose gold */
+  
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-white);
+  font-family: var(--font-montserrat);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 1444x960 Fixed Canvas Wallpaper Container using wallpaper.png as background */
+.wallpaper-container {
+  width: 1444px;
+  height: 960px;
+  position: relative;
+  background-image: url('wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* TOP TIMER OVERLAY SECTION (Masks the original static clock area) */
+.clock-section {
+  position: absolute;
+  top: 125px; /* Shifted slightly up to accommodate the larger 120px clock scale comfortably */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px; /* Wider container to comfortably hold the 1.5x larger digits */
+  height: 150px;
+  background-color: var(--bg-color); /* Pure black masks text underneath */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.time-display {
+  font-family: var(--font-montserrat);
+  font-size: 120px; /* 1.5x larger as requested */
+  font-weight: 700;
+  color: var(--pastel-pink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 0 0 35px rgba(251, 198, 198, 0.15);
+}
+
+/* FOCUS BOX OVERLAY SECTION (Masks focus mode, countdown score, and date) */
+.focus-mode-box {
+  position: absolute;
+  top: 295px; /* Comfortable bounding box overlay over original ymin=301, ymax=499 */
+  left: 185px; /* Covers original xmin=194, xmax=585 */
+  width: 410px;
+  height: 215px;
+  background-color: var(--bg-color); /* Pure black masks countdown text underneath */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.focus-header {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Delicate gap matching the visual canvas reference */
+  font-family: var(--font-montserrat);
+  font-size: 15.4px;
+  letter-spacing: 0.08em;
+  color: var(--pastel-pink); /* Soft blush pink */
+  opacity: 0.9;
+  margin-bottom: 40px; /* 40px above countdown score as specified in visual guidelines */
+}
+
+.sparkle-icon {
+  width: 24px; /* Delicate visual scale matching reference image exactly */
+  height: 24px;
+  object-fit: contain;
+}
+
+.countdown-display {
+  font-family: var(--font-montserrat);
+  font-size: 62.3px;
+  font-weight: 700;
+  color: var(--pastel-pink);
+  line-height: 1.1;
+}
+
+/* PROGRESS BAR OVERLAY */
+.progress-bar-container {
+  width: 390px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  margin-top: 20px; /* 20px below countdown display */
+  margin-bottom: 15px; /* 15px above date text */
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 2.2%; /* Starts dynamically at 2.2% on Day 1/45 */
+  background-color: var(--pastel-pink);
+  border-radius: 2px;
+  transition: width 1s ease-in-out;
+}
+
+.date-display {
+  font-family: var(--font-montserrat);
+  font-size: 18.8px;
+  font-weight: 400;
+  color: #8c807b; /* Soft warm luxury gray matching the dividers and quote text tone */
+}
