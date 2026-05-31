@@ -55,8 +55,8 @@ body {
 
 .time-display {
   font-family: var(--font-montserrat);
-  font-size: 125px; /* 1.5x larger as requested */
-  font-weight: 900;
+  font-size: 120px; /* 1.5x larger as requested */
+  font-weight: 700;
   color: var(--pastel-pink);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -83,10 +83,9 @@ body {
   align-items: center;
   gap: 8px; /* Delicate gap matching the visual canvas reference */
   font-family: var(--font-montserrat);
-  font-size: 18px;
+  font-size: 15.4px;
   letter-spacing: 0.08em;
-  color: #f44c7a; /* Soft blush pink */
-  opacity: 1;
+  color: #f44c7a;
   margin-bottom: 40px; /* 40px above countdown score as specified in visual guidelines */
 }
 
