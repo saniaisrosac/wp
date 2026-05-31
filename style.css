@@ -56,7 +56,7 @@ body {
 .time-display {
   font-family: var(--font-montserrat);
   font-size: 165px; /* Perfectly overlays original clock font scale */
-  font-weight: 900;
+  font-weight: 1200;
   color: var(--pastel-pink);
   letter-spacing: -0.01em;
   line-height: 1;
