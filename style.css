@@ -41,11 +41,11 @@ body {
 /* TOP TIMER OVERLAY SECTION (Masks the original static clock area) */
 .clock-section {
   position: absolute;
-  top: 145px; /* Comfortable bounding box overlay over original ymin=164, ymax=236 */
+  top: 125px; /* Shifted slightly up to accommodate the larger 120px clock scale comfortably */
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 110px;
+  width: 800px; /* Wider container to comfortably hold the 1.5x larger digits */
+  height: 150px;
   background-color: var(--bg-color); /* Pure black masks text underneath */
   display: flex;
   justify-content: center;
@@ -55,12 +55,12 @@ body {
 
 .time-display {
   font-family: var(--font-montserrat);
-  font-size: 165px; /* Perfectly overlays original clock font scale */
-  font-weight: 1200;
+  font-size: 125px; /* 1.5x larger as requested */
+  font-weight: 900;
   color: var(--pastel-pink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1;
-  text-shadow: 0 0 25px rgba(251, 198, 198, 0.12);
+  text-shadow: 0 0 35px rgba(251, 198, 198, 0.15);
 }
 
 /* FOCUS BOX OVERLAY SECTION (Masks focus mode, countdown score, and date) */
@@ -81,18 +81,18 @@ body {
 .focus-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* Delicate gap matching the visual canvas reference */
   font-family: var(--font-montserrat);
-  font-size: 18px;
+  font-size: 15.4px;
   letter-spacing: 0.08em;
-  color: #f44c7a;
+  color: var(--pastel-pink); /* Soft blush pink */
   opacity: 0.9;
-  margin-bottom: 25px; /* Aligns countdown numbers exactly to their original vertical level */
+  margin-bottom: 40px; /* 40px above countdown score as specified in visual guidelines */
 }
 
 .sparkle-icon {
-  width: 18px;
-  height: 18px;
+  width: 24px; /* Delicate visual scale matching reference image exactly */
+  height: 24px;
   object-fit: contain;
 }
 
@@ -127,5 +127,5 @@ body {
   font-family: var(--font-montserrat);
   font-size: 18.8px;
   font-weight: 400;
-  color: var(--text-gray);
+  color: #8c807b; /* Soft warm luxury gray matching the dividers and quote text tone */
 }
